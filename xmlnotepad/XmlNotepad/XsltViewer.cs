@@ -271,7 +271,8 @@ namespace XmlNotepad {
             ViewSource,
             Options
         }
-	
+
+        /*
         private mshtml.HTMLDocument GetDocument() {
             try {
                 mshtml.HTMLDocument htm = (mshtml.HTMLDocument)this.WebBrowser1.Document.DomDocument;
@@ -280,14 +281,18 @@ namespace XmlNotepad {
                 throw (new Exception("Cannot retrieve the document from the WebBrowser control"));
             }
         }
+        */
 
         public void ViewSource() {
             IOleCommandTarget cmdt;
             Object o = new object();
             try {
+                System.Windows.Forms.MessageBox.Show("not implemented (requires mshtml)");
+                /*
                 cmdt = (IOleCommandTarget)GetDocument();
                 cmdt.Exec(ref cmdGuid, (uint)MiscCommandTarget.ViewSource,
                 (uint)OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT, ref o, ref o);
+                */
             } catch (Exception e) {
                 System.Windows.Forms.MessageBox.Show(e.Message);
             }
@@ -297,9 +302,12 @@ namespace XmlNotepad {
             IOleCommandTarget cmdt;
             Object o = new object();
             try {
+                System.Windows.Forms.MessageBox.Show("not implemented (requires mshtml)");
+                /*
                 cmdt = (IOleCommandTarget)GetDocument();
                 cmdt.Exec(ref cmdGuid, (uint)MiscCommandTarget.Find,
                 (uint)OLECMDEXECOPT.OLECMDEXECOPT_DODEFAULT, ref o, ref o);
+                */
             } catch (Exception e) {
                 System.Windows.Forms.MessageBox.Show(e.Message);
             }
