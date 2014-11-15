@@ -94,6 +94,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>"$(SolutionDir)PublishDrop.cmd" "$(TargetDir)" &gt; "$(SolutionDir)Publish.log"</PostBuildEvent>
+    <PostBuildEvent>sh "$(SolutionDir)PublishDrop.sh" "$(TargetDir)" &gt; "$(SolutionDir)Publish.log" 2&gt;&amp;1</PostBuildEvent>
   </PropertyGroup>
 </Project>
