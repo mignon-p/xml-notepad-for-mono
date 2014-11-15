@@ -415,9 +415,6 @@
   <data name="ctxElementChildToolStripMenuItem.AccessibleName" xml:space="preserve">
     <value>ctxElementChildToolStripMenuItem</value>
   </data>
-  <data name="ctxElementChildToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Ins</value>
-  </data>
   <data name="ctxElementChildToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
   </data>
@@ -450,9 +447,6 @@
   </data>
   <data name="ctxAttributeChildToolStripMenuItem.AccessibleName" xml:space="preserve">
     <value>ctxAttributeChildToolStripMenuItem</value>
-  </data>
-  <data name="ctxAttributeChildToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+Ins</value>
   </data>
   <data name="ctxAttributeChildToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 22</value>
@@ -995,9 +989,6 @@
   <data name="repeatToolStripMenuItem.AccessibleName" xml:space="preserve">
     <value>repeatToolStripMenuItem</value>
   </data>
-  <data name="repeatToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ins</value>
-  </data>
   <data name="repeatToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 22</value>
   </data>
@@ -1394,9 +1385,6 @@
   <data name="elementChildToolStripMenuItem.AccessibleName" xml:space="preserve">
     <value>elementChildToolStripMenuItem</value>
   </data>
-  <data name="elementChildToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Ins</value>
-  </data>
   <data name="elementChildToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 22</value>
   </data>
@@ -1429,9 +1417,6 @@
   </data>
   <data name="attributeChildToolStripMenuItem.AccessibleName" xml:space="preserve">
     <value>attributeChildToolStripMenuItem</value>
-  </data>
-  <data name="attributeChildToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+Ins</value>
   </data>
   <data name="attributeChildToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>151, 22</value>
