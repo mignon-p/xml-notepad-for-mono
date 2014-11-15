@@ -25,7 +25,7 @@
     </FileUpgradeFlags>
     <TargetZone>LocalIntranet</TargetZone>
     <GenerateManifests>false</GenerateManifests>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <SccProjectName>SAK</SccProjectName>

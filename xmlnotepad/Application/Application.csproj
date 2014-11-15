@@ -11,7 +11,7 @@
     <AssemblyName>XmlNotepad</AssemblyName>
     <ApplicationIcon>Resources\XmlNote.ico</ApplicationIcon>
     <StartupObject>XmlNotepad.Program</StartupObject>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
     <DelaySign>true</DelaySign>
     <FileUpgradeFlags>
