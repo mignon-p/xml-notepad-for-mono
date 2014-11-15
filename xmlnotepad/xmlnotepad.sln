@@ -22,8 +22,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlDiffView8", "..\XmlDiff\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlDiffPatch8", "..\XmlDiff\src\XmlDiffPatch8.csproj", "{8BA90DA5-E8EB-4DEC-9D41-951D012B90CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{64148FA2-1BED-4EAE-9B07-BF6CBB73EA31}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontBuilder", "FontBuilder\FontBuilder.csproj", "{C33DB045-65F8-45F1-A703-C7D2969F06CA}"
 EndProject
 Global
