@@ -12,7 +12,7 @@ using System.Net;
 using System.Net.Cache;
 
 namespace XmlNotepad
-{   
+{
     /// <summary>
     /// XmlCache wraps an XmlDocument and provides the stuff necessary for an "editor" in terms
     /// of watching for changes on disk, notification when the file has been reloaded, and keeping
@@ -108,7 +108,7 @@ namespace XmlNotepad
             this.checker = new Checker(handler);
             checker.Validate(this);
         }
-      
+
 
         public XmlDocument Document
         {
@@ -152,7 +152,7 @@ namespace XmlNotepad
             get { return this.schemaCache; }
             set { this.schemaCache = value; }
         }
-        
+
         /// <summary>
         /// Loads an instance of xml.
         /// Load updated to handle validation when instance doc refers to schema.
@@ -229,7 +229,7 @@ namespace XmlNotepad
         void OnValidationEvent(object sender, ValidationEventArgs e)
         {
             // todo: log errors in error list window.
-        }                
+        }
 
         public void Reload()
         {
@@ -269,7 +269,7 @@ namespace XmlNotepad
             {
                 StopFileWatch();
                 XmlWriterSettings s = new XmlWriterSettings();
-                Utilities.InitializeWriterSettings(s, this.site);                
+                Utilities.InitializeWriterSettings(s, this.site);
                 s.Encoding = GetEncoding();
                 using (XmlWriter w = XmlWriter.Create(name, s)) {
                     doc.Save(w);
@@ -300,7 +300,7 @@ namespace XmlNotepad
                 File.SetAttributes(filename, attrsMinusReadOnly);
             } finally {
                 StartFileWatch();
-            }           
+            }
         }
 
         void StopFileWatch()
@@ -328,7 +328,7 @@ namespace XmlNotepad
         }
         void StartReload(object sender, EventArgs e)
         {
-            // Apart from retrying, the timer has the nice side effect of also 
+            // Apart from retrying, the timer has the nice side effect of also
             // collapsing multiple file system events into one timer event.
             retries = 3;
             timer.Enabled = true;
@@ -349,7 +349,7 @@ namespace XmlNotepad
                 // Only do the reload if the file on disk really is different from
                 // what we last loaded.
                 if (this.lastModified < LastModTime) {
-                    
+
                     // Test if we can open the file (it might still be locked).
                     FileStream fs = new FileStream(this.filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                     fs.Close();
@@ -370,7 +370,7 @@ namespace XmlNotepad
 
         private void watcher_Changed(object sender, FileSystemEventArgs e)
         {
-            if (e.ChangeType == WatcherChangeTypes.Changed && 
+            if (e.ChangeType == WatcherChangeTypes.Changed &&
                 IsSamePath(this.filename, e.FullPath))
             {
                 sync.BeginInvoke(new EventHandler(StartReload), new object[] { this, EventArgs.Empty });
