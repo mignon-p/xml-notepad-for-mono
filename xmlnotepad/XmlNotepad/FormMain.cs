@@ -30,7 +30,7 @@ namespace XmlNotepad {
         private System.Windows.Forms.StatusBarPanel statusBarPanelBusy;
         RecentFilesMenu recentFiles;
         TaskList taskList;
-        XsltViewer dynamicHelpViewer;
+        // XsltViewer dynamicHelpViewer;
         bool loading;
         FormSearch search;
         IIntellisenseProvider ip;
@@ -175,7 +175,7 @@ namespace XmlNotepad {
         protected NoBorderTabPage tabPageTreeView;
         protected NoBorderTabPage tabPageHtmlView;
         private XmlTreeView xmlTreeView1;
-        private XsltViewer xsltViewer;
+        // private XsltViewer xsltViewer;
 
         private string undoLabel;
         private ToolStripSeparator toolStripSeparator3;
@@ -241,8 +241,8 @@ namespace XmlNotepad {
             this.undoLabel = this.undoToolStripMenuItem.Text;
             this.redoLabel = this.redoToolStripMenuItem.Text;
 
-            this.xsltViewer.SetSite(this);
-            this.dynamicHelpViewer.SetSite(this);
+            // this.xsltViewer.SetSite(this);
+            // this.dynamicHelpViewer.SetSite(this);
 
             CreateTabControl();
 
@@ -250,8 +250,10 @@ namespace XmlNotepad {
 
             InitializeHelp(this.helpProvider1);
 
+            /*
             this.dynamicHelpViewer.DefaultStylesheetResource = "XmlNotepad.DynamicHelp.xslt";
             this.dynamicHelpViewer.ShowFileStrip = false;
+            */
 
             model.FileChanged += new EventHandler(OnFileChanged);
             model.ModelChanged += new EventHandler<ModelChangedEventArgs>(OnModelChanged);
@@ -629,9 +631,11 @@ namespace XmlNotepad {
             //
             // tabPageDynamicHelp
             //
+            /*
             this.dynamicHelpViewer.Dock = DockStyle.Fill;
             this.dynamicHelpViewer.VisibleChanged += new EventHandler(dynamicHelpViewer_VisibleChanged);
             this.tabPageDynamicHelp.Controls.Add(dynamicHelpViewer);
+            */
             this.tabPageDynamicHelp.Location = new System.Drawing.Point(4, 24);
             this.tabPageDynamicHelp.Name = "tabPageDynamicHelp";
             this.tabPageDynamicHelp.Padding = new System.Windows.Forms.Padding(0);
@@ -837,8 +841,8 @@ namespace XmlNotepad {
             this.tabPageDynamicHelp = new XmlNotepad.NoBorderTabPage();
             this.resizer = new XmlNotepad.PaneResizer();
             this.taskList = new XmlNotepad.TaskList();
-            this.dynamicHelpViewer = new XmlNotepad.XsltViewer();
-            this.xsltViewer = new XmlNotepad.XsltViewer();
+            // this.dynamicHelpViewer = new XmlNotepad.XsltViewer();
+            // this.xsltViewer = new XmlNotepad.XsltViewer();
             this.tabControlViews = new XmlNotepad.NoBorderTabControl();
             this.tabPageTreeView = new XmlNotepad.NoBorderTabPage();
             this.tabPageHtmlView = new XmlNotepad.NoBorderTabPage();
@@ -1964,17 +1968,21 @@ namespace XmlNotepad {
             //
             // dynamicHelpViewer
             //
+            /*
             resources.ApplyResources(this.dynamicHelpViewer, "dynamicHelpViewer");
             this.dynamicHelpViewer.DefaultStylesheetResource = "XmlNotepad.DefaultSS.xslt";
             this.dynamicHelpViewer.Name = "dynamicHelpViewer";
             this.dynamicHelpViewer.ShowFileStrip = true;
+            */
             //
             // xsltViewer
             //
+            /*
             resources.ApplyResources(this.xsltViewer, "xsltViewer");
             this.xsltViewer.DefaultStylesheetResource = "XmlNotepad.DefaultSS.xslt";
             this.xsltViewer.Name = "xsltViewer";
             this.xsltViewer.ShowFileStrip = true;
+            */
             //
             // tabControlViews
             //
@@ -1994,9 +2002,11 @@ namespace XmlNotepad {
             //
             // tabPageHtmlView
             //
+            /*
             resources.ApplyResources(this.tabPageHtmlView, "tabPageHtmlView");
             this.tabPageHtmlView.Controls.Add(this.xsltViewer);
             this.tabPageHtmlView.Name = "tabPageHtmlView";
+            */
             //
             // comboBoxLocation
             //
@@ -2046,7 +2056,7 @@ namespace XmlNotepad {
         }
 
         public virtual void DisplayXsltResults() {
-            this.xsltViewer.DisplayXsltResults();
+            // this.xsltViewer.DisplayXsltResults();
         }
 
         void SelectTreeView() {
@@ -2475,11 +2485,11 @@ namespace XmlNotepad {
         private void DisplayHelp() {
             // display documentation
             if (null == xmlTreeView1.SelectedNode) {
-                this.dynamicHelpViewer.DisplayXsltResults(new XmlDocument());
+                // this.dynamicHelpViewer.DisplayXsltResults(new XmlDocument());
                 return;
             }
             XmlDocument xmlDoc = xmlTreeView1.SelectedNode.GetDocumentation();
-            if (this.dynamicHelpViewer.Visible) {
+            /* if (this.dynamicHelpViewer.Visible) {
                 ShowStatus("");
                 helpAvailableHint = false;
                 if (null == xmlDoc) {
@@ -2491,7 +2501,7 @@ namespace XmlNotepad {
                     }
                 }
                 this.dynamicHelpViewer.DisplayXsltResults(xmlDoc);
-            } else if (helpAvailableHint && xmlDoc != null) {
+            } else */ if (helpAvailableHint && xmlDoc != null) {
                 helpAvailableHint = false;
                 ShowStatus(SR.DynamicHelpAvailable);
             }
@@ -2797,7 +2807,7 @@ namespace XmlNotepad {
 
         void Search(bool replace) {
             if (this.tabControlViews.SelectedTab == this.tabPageHtmlView) {
-                this.xsltViewer.Find();
+                // this.xsltViewer.Find();
                 return;
             }
 
@@ -2854,7 +2864,7 @@ namespace XmlNotepad {
 
         private void sourceToolStripMenuItem_Click(object sender, EventArgs e) {
             if (this.tabControlViews.SelectedTab == this.tabPageHtmlView) {
-                this.xsltViewer.ViewSource();
+                // this.xsltViewer.ViewSource();
             } else {
                 OpenNotepad(this.model.FileName);
             }
@@ -3178,9 +3188,11 @@ namespace XmlNotepad {
                 }
             }
 
+            /*
             Uri uri = new Uri(tempFile);
             WebBrowserForm browserForm = new WebBrowserForm(uri, "XmlDiff");
             browserForm.Show();
+            */
         }
 
         string ApplicationPath {
