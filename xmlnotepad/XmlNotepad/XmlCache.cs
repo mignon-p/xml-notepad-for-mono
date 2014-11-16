@@ -167,7 +167,7 @@ namespace XmlNotepad
 
             Uri uri = new Uri(file, UriKind.RelativeOrAbsolute);
             if (!uri.IsAbsoluteUri) {
-                Uri resolved = new Uri(new Uri(Directory.GetCurrentDirectory() + "\\"), uri);
+                Uri resolved = new Uri(new Uri(Directory.GetCurrentDirectory() + "/"), uri);
                 file = resolved.LocalPath;
             }
 
@@ -315,7 +315,7 @@ namespace XmlNotepad
         {
             if (this.filename != null && Location.IsFile && File.Exists(this.filename))
             {
-                string dir = Path.GetDirectoryName(this.filename) + "\\";
+                string dir = Path.GetDirectoryName(this.filename) + "/";
                 this.watcher = new FileSystemWatcher(dir, "*.*");
                 this.watcher.Changed += new FileSystemEventHandler(watcher_Changed);
                 this.watcher.Renamed += new RenamedEventHandler(watcher_Renamed);
